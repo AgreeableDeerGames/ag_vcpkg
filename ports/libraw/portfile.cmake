@@ -3,8 +3,8 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO LibRaw/LibRaw
-    REF 0.19.0
-    SHA512 4fbcce6567463cff1784d0ab9e908906acf79ad3d5af3d52d231f99941b3c3e5daf9049ce2d32a56ba7ec523138ad0c1ff8b61d38fe33abcf1aa6deafd4927f2
+    REF 0.19.2
+    SHA512 78808a0d5f8a2b0f8e52699783d677c645abfdbcf824ea118542ae047767512b7a3d9a3ccfcb786bbfae6ce788df9b2c58afb89dd78e78e755061b742b50bea6
     HEAD_REF master
 )
 
@@ -78,6 +78,10 @@ file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/share)
 
 # Rename cmake module into a config in order to allow more flexible lookup rules
 file(RENAME ${CURRENT_PACKAGES_DIR}/share/libraw/FindLibRaw.cmake ${CURRENT_PACKAGES_DIR}/share/libraw/LibRaw-config.cmake)
+
+if(VCPKG_LIBRARY_LINKAGE STREQUAL "static")
+    file(COPY ${CMAKE_CURRENT_LIST_DIR}/vcpkg-cmake-wrapper.cmake DESTINATION ${CURRENT_PACKAGES_DIR}/share/libraw)
+endif()
 
 # Handle copyright
 file(COPY ${SOURCE_PATH}/COPYRIGHT DESTINATION ${CURRENT_PACKAGES_DIR}/share/libraw)
