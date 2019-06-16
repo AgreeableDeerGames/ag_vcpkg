@@ -1,4 +1,4 @@
 Source: gamebackbone
-Version: 0.1.2
-Description: small low-level library meant to accelerate the production of 2D video games
+Version: 0.2.1
+Description: Small, low-level library meant to accelerate the production of 2D video games.
 Build-Depends: sfml, tgui
