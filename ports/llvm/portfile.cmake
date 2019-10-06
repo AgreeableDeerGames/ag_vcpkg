@@ -31,6 +31,7 @@ vcpkg_apply_patches(
     PATCHES 
             install-cmake-modules-to-share.patch
             fix-build-error.patch
+            fix-linux-build.patch
 )
 
 vcpkg_find_acquire_program(PYTHON3)
@@ -87,6 +88,12 @@ if(NOT DEFINED VCPKG_BUILD_TYPE OR VCPKG_BUILD_TYPE STREQUAL "debug")
     file(READ ${CURRENT_PACKAGES_DIR}/share/llvm/LLVMExports-debug.cmake DEBUG_MODULE)
     string(REPLACE "\${_IMPORT_PREFIX}/debug/bin" "\${_IMPORT_PREFIX}/tools/llvm" DEBUG_MODULE "${DEBUG_MODULE}")
     file(WRITE ${CURRENT_PACKAGES_DIR}/share/llvm/LLVMExports-debug.cmake "${DEBUG_MODULE}")
+endif()
+
+if (EXISTS ${CURRENT_PACKAGES_DIR}/share/llvm/LLVMConfig.cmake)
+    file(READ ${CURRENT_PACKAGES_DIR}/share/llvm/LLVMConfig.cmake LLVM_TOOLS_MODULE)
+    string(REPLACE "\${LLVM_INSTALL_PREFIX}/bin" "\${LLVM_INSTALL_PREFIX}/tools/llvm" LLVM_TOOLS_MODULE "${LLVM_TOOLS_MODULE}")
+    file(WRITE ${CURRENT_PACKAGES_DIR}/share/llvm/LLVMConfig.cmake "${LLVM_TOOLS_MODULE}")
 endif()
 
 file(REMOVE_RECURSE

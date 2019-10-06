@@ -3,8 +3,9 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO "Neargye/magic_enum"
-    REF 4dfaa4b7b4814c2cf85b08ad3084fc28c8b129c6
-    SHA512 924e5a134f4200652fdc3f3d676b49efa8c30b5577d638f60134ce81092b23f7976a494ce50b58b25ed7bce0653a7e29206acf9e512408c4701ec6822ab2d176
+    REF v0.6.1
+    SHA512 546c2ea8f6aeda1b21484a3a90ec4338e15c5639b6da22350277534eeb16cfa8e987eaa1dcbb754dfaea58bd3217f95602944e2c61a694d50f9bfbaf6c5c12d6
+    HEAD_REF master
 )
 
 vcpkg_configure_cmake(
