@@ -3,8 +3,8 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO lavinrp/GameBackbone
-    REF 0.2.2
-    SHA512 f39d612e595b4a32157f0f2be56bbc095764436c4281eccd2894fb65c8590a1d6d9e02dbeceeecdd4947c3c4516ee2a95b8ef739f56b3e9102c57ec9aea92287
+    REF 0.3.0
+    SHA512 0
     HEAD_REF master
 )
 
