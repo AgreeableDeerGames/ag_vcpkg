@@ -3,8 +3,8 @@ include(vcpkg_common_functions)
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO AgreeableDeerGames/GameBackbone
-    REF 0.4.0
-    SHA512 16deab351a8e58efc8944d950e98db8c7d845574
+    REF 0.4.1
+    SHA512 d13893b78d854e62010d9bc651d41fcef91595b5
     HEAD_REF master
 )
 
