@@ -4,7 +4,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO AgreeableDeerGames/GameBackbone
     REF 0.4.1
-    SHA512 d13893b78d854e62010d9bc651d41fcef91595b5
+    SHA512 1
     HEAD_REF master
 )
 
